@@ -1,0 +1,167 @@
+/*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+.mat-card {
+	width: fit-content;
+	margin: 15px auto auto;
+	min-width: 685px;
+}
+
+.actions-container {
+	width: 85vw;
+	margin: 25px auto 0;
+	display: flex;
+	justify-content: flex-end;
+	padding-right: 1em;
+
+	button {
+		border: none;
+		background: none;
+		font-size: large;
+	}
+}
+
+form {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-column-gap: 15px;
+	grid-row-gap: 1em;
+	width: 85vw;
+	margin: 1em auto 50px;
+
+	small {
+		grid-column: 2;
+		justify-self: start;
+
+		&.input-warning {
+			border-radius: 4px;
+
+			&::before {
+				content: "⚠";
+			}
+		}
+	}
+
+	output {
+		border: 1px solid darkgray;
+		padding: 2px 3px;
+		background-color: white;
+		display: inline-block;
+		appearance: textfield;
+		background-color: -moz-field;
+		box-shadow: 1px 1px 1px 0 lightgray inset;
+		font: -moz-field;
+		font: -webkit-small-control;
+	}
+
+	legend {
+		font-size: 14px;
+		font-weight: bold;
+		margin-bottom: 0px;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		padding: 5px 5px 5px 10px;
+		width: 99%;
+		user-select: none;
+	}
+
+	div {
+		grid-template-columns: 1fr 1fr;
+		grid-column-gap: 5px;
+		display: grid;
+	}
+
+	fieldset {
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		grid-column: 1 / -1;
+
+		button {
+			float: right;
+			color: white;
+			padding: 1px 5px;
+			font-size: 12px;
+			line-height: 1.5;
+			border-radius: 3px;
+			text-align: center;
+		}
+
+		fieldset {
+			margin-top: 10px;
+
+			div {
+				grid-template-columns: auto 1fr 1fr auto;
+			}
+
+			input {
+				margin-left: 5px;
+			}
+
+			mat-checkbox {
+				margin: auto;
+			}
+		}
+
+		legend {
+			cursor: pointer;
+		}
+
+		li {
+			display: grid;
+			grid-template-columns: auto 1fr;
+			grid-column-gap: 10px;
+			grid-row-gap: 0.75em;
+
+			&.bordered-item {
+				border-top: 1px solid gray;
+				margin-top: 10px;
+				padding-top: 10px;
+			}
+		}
+
+		div {
+			width: 100%;
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-column-gap: 15px;
+			grid-row-gap: 1em;
+
+			&[hidden] {
+				display: none;
+				visibility: hidden;
+			}
+		}
+	}
+
+	.buttons {
+		grid-column-end: -1;
+		justify-self: end;
+	}
+}
+
+@media(max-width: 1230px) {
+	form {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media(max-width: 840px) {
+	form {
+		grid-template-columns: 1fr;
+
+		fieldset div,  {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+}
